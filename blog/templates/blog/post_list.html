@@ -13,10 +13,12 @@
             <p>Aenean eu leo quam. こんにちは! よろしくお願いします!</p>
         </div>
 
-        <div>
-            <p>公開日: 2019/06/11, 23:47</p>
-            <h2><a href="">2番目の投稿</a></h2>
-            <p>こんにちは! よろしくお願いします!</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h3><a href="">{{ post.title }}</a></h3>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
